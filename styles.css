@@ -1,0 +1,18 @@
+* {
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+#container div {
+    border: 2px solid black;
+    width: 6.25%;
+    height: 6.25%;
+}
