@@ -4,23 +4,49 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+}
+
 #container {
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    
 } 
 
-
-
-#container div {
+/*#container div {
     border: 2px solid black;
     width: 6.25%;
     height: 6.25%;
-}
+}*/
+
 
 .blackbox {
     background-color: black;
 } 
 
+.textbox {
+    height: 30px;
+    width: 100px;
+}
 
+#button {
+    height: 25px;
+    width: 50px;
+}
+
+#etchspace {
+    display: flex;
+    flex-wrap: wrap;
+    height: 510px;
+    width: 510px;
+    border: 5px solid blue;
+    
+}
+
+.blackoutline {
+    border: 1px solid black;
+    width: 31.25px;
+    height: 31.25px;
+
+}
