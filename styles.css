@@ -17,8 +17,13 @@ body {
 #container {
     height: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 } 
+
+.ptext {
+    height: 50px;
+
+}
 
 /*#container div {
     border: 2px solid black;
@@ -49,12 +54,10 @@ body {
     height: 510px;
     width: 510px;
     border: 5px solid blue;
-    
 }
 
 .blackoutline {
     border: 1px solid black;
     width: 31.25px;
     height: 31.25px;
-
 }
