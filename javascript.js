@@ -17,32 +17,46 @@ const etchspace = document.createElement("div");
 etchspace.setAttribute("id", "etchspace");
 container.appendChild(etchspace);
 
-const input = document.createElement("input");
-const input2 = document.createElement("input");
+const inputx = document.createElement("input");
+const inputy = document.createElement("input");
 const button = document.createElement("button");
-input.setAttribute("value", "hello");
-input2.setAttribute("value", "goodbye");
+inputx.setAttribute("value", "16");
+inputx.setAttribute("type", "number");
+inputy.setAttribute("value", "16");
+inputy.setAttribute("type", "number");
 button.innerText = "hello";
 button.setAttribute("onclick", "myFunction()");
-container.appendChild(input);
-container.appendChild(input2);
+container.appendChild(inputx);
+container.appendChild(inputy);
 container.appendChild(button);
-input.classList.add("textbox");
-input2.classList.add("textbox");
+inputx.classList.add("textbox");
+inputy.classList.add("textbox");
 button.setAttribute("id","button");
 
-let x = input.value;
-let y = input2.value;
+let x = (inputx.value);
+let y = inputy.value;
 let z = [];
 
 function myFunction() {
     let test = document.getElementsByClassName("blackoutline");
     for (i = test.length; i > 0; i--) {
         test[0].remove()};
-    x = input.value;
-    y = input2.value;
+    x = inputx.value;
+    x = Math.round(x);
+    if (x >= 100) {x = 100};
+    if (x <= 0) {x = 1};
+    y = inputy.value;
+    y = Math.round(y);
+    if (y >= 100) {y = 100};
+    if (y <= 0) {y = 1};
     z[0] = x;
     z[1] = y;
+    for (i = 0; i < x; i++) {
+        const box = document.createElement("div");
+        box.setAttribute("class", "blackoutline");
+        box.addEventListener("mouseover", function test() {box.classList.add("blackbox")});
+        etchspace.appendChild(box);
+    }
 };
 
 for (i = 0; i < 256; i++) {
