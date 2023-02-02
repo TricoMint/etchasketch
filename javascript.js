@@ -20,8 +20,10 @@ container.appendChild(etchspace);
 const inputx = document.createElement("input");
 const inputy = document.createElement("input");
 const button = document.createElement("button");
+inputx.setAttribute("id", "inputx");
 inputx.setAttribute("value", "16");
 inputx.setAttribute("type", "number");
+inputy.setAttribute("id", "inputy");
 inputy.setAttribute("value", "16");
 inputy.setAttribute("type", "number");
 button.innerText = "hello";
@@ -36,6 +38,9 @@ button.setAttribute("id","button");
 let x = (inputx.value);
 let y = inputy.value;
 let z = [];
+let a;
+let widthbox;
+let heightbox;
 
 function myFunction() {
     let test = document.getElementsByClassName("blackoutline");
@@ -51,9 +56,15 @@ function myFunction() {
     if (y <= 0) {y = 1};
     z[0] = x;
     z[1] = y;
-    for (i = 0; i < x; i++) {
+    a = x * y;
+    heightbox = (500 / x) + "px";
+    widthbox = (500 / y) + "px";
+    document.getElementById("inputx").style.width = "50px";
+    for (i = 0; i < a; i++) {
         const box = document.createElement("div");
         box.setAttribute("class", "blackoutline");
+        box.style.height = heightbox;
+        box.style.width = widthbox;
         box.addEventListener("mouseover", function test() {box.classList.add("blackbox")});
         etchspace.appendChild(box);
     }
