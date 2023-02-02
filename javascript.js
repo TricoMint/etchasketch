@@ -33,7 +33,7 @@ inputx.setAttribute("type", "number");
 inputy.setAttribute("id", "inputy");
 inputy.setAttribute("value", "16");
 inputy.setAttribute("type", "number");
-button.innerText = "hello";
+button.innerText = "Go";
 button.setAttribute("onclick", "myFunction()");
 container.appendChild(xtext);
 container.appendChild(inputx);
@@ -79,9 +79,16 @@ function myFunction() {
     }
 };
 
+
+
 for (i = 0; i < 256; i++) {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
     const box = document.createElement("div");
     box.setAttribute("class", "blackoutline");
-    box.addEventListener("mouseover", function test() {box.classList.add("blackbox")});
+    /*box.addEventListener("mouseover", function test() 
+    {box.classList.add("blackbox")}); */
+    box.addEventListener("mouseover", function colorful() {
+        box.style.backgroundColor = "#" + randomColor;} );
+
     etchspace.appendChild(box);
 }
